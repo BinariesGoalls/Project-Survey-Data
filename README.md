@@ -52,7 +52,7 @@ Here's an overview of the technologies used and how they are integrated into the
 
 ### 4.1 Data Collection and Storage
 
-The Azure Data Factory orchestrates the daily ingestion of survey datasets.
+The Azure Data Factory orchestrates the daily ingestion of survey datasets. The Azure Data Factory pipeline, copies data from the sources into the Azure Data Lake Storage container.
 
 ![Overview of Data Ingestion](./imgs/image3.png)
 
@@ -64,7 +64,9 @@ Post-collection, the data is stored in Azure Data Lake Storage, preserving the o
 
 ### 4.3 Data Transformation
 
-The ```Vasco Business Case Transformation.ipynb``` file holds the details of the transformation process performed
+The ```Vasco Business Case Transformation.ipynb``` file holds the details of the transformation process performed.
+
+The transformation process is performed on Databricks in a Spark cluster.
 
 The collected data undergoes various transformation stages:
 
@@ -75,7 +77,7 @@ The collected data undergoes various transformation stages:
 
 ### 4.4 Load into Azure Synapse Analytics
 
-The transformed data is loaded into Azure Synapse Analytics, preparing it for structured analysis.
+The transformed data, stored as .parquet files, is loaded into Azure Synapse Analytics,  making the data ready for analytical operations.
 
 ![Azure Synapse Analytics](./imgs/image2.png)
 
